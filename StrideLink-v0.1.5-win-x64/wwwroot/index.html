@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+  <meta name="theme-color" content="#07110d">
+  <title>StrideLink</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div>
+        <p class="eyebrow">PHONE MOTION CONTROLLER</p>
+        <h1>StrideLink</h1>
+      </div>
+      <span id="connection" class="pill offline">Offline</span>
+    </header>
+
+    <section id="hero" class="hero idle" aria-live="polite">
+      <div class="pulse"></div>
+      <p class="state-label">STATE</p>
+      <div id="state">READY</div>
+      <p id="stateHint">Enable motion, then put the phone in your pocket.</p>
+    </section>
+
+    <button id="enable" class="primary">Enable motion sensors</button>
+    <button id="manual" class="manual">Hold to test W</button>
+
+    <section class="readouts">
+      <div><span>Motion</span><strong id="motion">0.00</strong></div>
+      <div><span>Cadence</span><strong><span id="cadence">—</span> <small>spm</small></strong></div>
+      <div><span>Samples</span><strong><span id="sampleRate">0</span> <small>Hz</small></strong></div>
+    </section>
+
+    <section class="settings">
+      <label for="sensitivity"><span>Sensitivity</span><output id="sensitivityValue">1.25</output></label>
+      <input id="sensitivity" type="range" min="0.50" max="4.00" step="0.05" value="1.25">
+      <label for="stopDelay"><span>Stop delay</span><output id="stopDelayValue">850 ms</output></label>
+      <input id="stopDelay" type="range" min="400" max="1500" step="50" value="850">
+    </section>
+
+    <p id="message" class="message">The screen must remain on and this page must stay in front.</p>
+  </main>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
